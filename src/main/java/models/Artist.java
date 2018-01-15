@@ -1,29 +1,27 @@
 package models;
 
+import java.util.Set;
+
 public class Artist {
 
     private int id;
     private String name;
-    private int age;
+    private Set<Album> albums;
 
     public Artist() {
     }
+
 
     public Artist(String name) {
         this.name = name;
     }
 
-    public Artist(String name, int age) {
-        this.name = name;
-        this.age = age;
+    public Set<Album> getAlbums() {
+        return albums;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
+    public void setAlbums(Set<Album> albums) {
+        this.albums = albums;
     }
 
     public int getId() {

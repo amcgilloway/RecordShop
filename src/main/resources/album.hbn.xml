@@ -5,17 +5,14 @@
 
 <hibernate-mapping>
 
-    <class name="models.Artist" table="artists">
+    <class name="models.Album" table="albums">
         <id name="id" type="int" column="id">
             <generator class="identity"/>
         </id>
-        <property name="name" column="name" type="string"/>
 
-        <set name="albums">
-            <key>
-                <column name="artist_id" not-null="true"/>
-            </key>
-            <one-to-many class="models.Album"/>
-        </set>
+        <property name="title" column="title" type="string"/>
+        <property name="genre" column="genre" type="string"/>
+        <many-to-one name="artist" class="models.Artist" column="artist_id" not-null="true" lazy="false"/>
+
     </class>
 </hibernate-mapping>

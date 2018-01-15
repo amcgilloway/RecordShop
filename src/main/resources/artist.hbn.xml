@@ -10,6 +10,12 @@
             <generator class="identity"/>
         </id>
         <property name="name" column="name" type="string"/>
-        <property name="age" column="age" type="int" not-null="false"/>
+
+        <set name="albums">
+            <key>
+                <column name="artist_id" not-null="true"/>
+            </key>
+            <one-to-many class="models.Album"/>
+        </set>
     </class>
 </hibernate-mapping>
